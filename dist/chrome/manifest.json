@@ -1,0 +1,61 @@
+{
+  "name": "ddv devtools",
+  "version": "0.1",
+  "description": "Chrome devtools extension for debugging ddv applications.",
+  "manifest_version": 2,
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png",
+    "380": "icons/380.png"
+  },
+
+  "browser_action": {
+    "default_icon": {
+      "16": "icons/16.png",
+      "48": "icons/48.png",
+      "128": "icons/128.png",
+      "380": "icons/380.png"
+    },
+    "default_title": "Vue Devtools1",
+    "default_popup": "html/popups.html"
+  },
+
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "web_accessible_resources": [ "html/devtools.html", "html/devtools-background.html", "build/backend.js" ],
+
+  "devtools_page": "html/devtools-background.html",
+
+  "options_page": "index.html#/options",
+  "background": {
+    "page": "html/background.html",
+    "persistent": true
+  },
+
+  "permissions": [
+    "http://*/*",
+    "https://*/*",
+    "file://*",
+    "activeTab",
+    "tabs",
+    "contextMenus",
+    "notifications",
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "proxy"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["build/hook.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": ["build/detector.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
