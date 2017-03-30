@@ -16,10 +16,8 @@ module.exports = {
     ddvtools: 'ddvtools',
     background: 'background',
     backgroundDevtools: 'backgroundDevtools',
-    // hook: './src/hook.js',
-    // detector: './src/detector.js',
-    // backend: './src/backend.js',
-    // proxy: './src/proxy.js'
+    hook: 'content/hook.js',
+    detector: 'content/detector.js'
   },
   output: {
     path: path.resolve(__dirname, './build'),
