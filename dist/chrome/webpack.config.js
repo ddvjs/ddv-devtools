@@ -1,8 +1,8 @@
 'use strict'
 /* global __dirname:true */
-var path = require('path')
-var webpack = require('webpack')
-var alias = require('../alias')
+const path = require('path')
+const webpack = require('webpack')
+const alias = require('../alias')
 
 var bubleOptions = {
   target: process.env.NODE_ENV === 'production' ? null : { chrome: 52 },
@@ -11,13 +11,13 @@ var bubleOptions = {
 
 module.exports = {
   entry: {
-    popups: 'popups',
-    devtools: 'devtools',
-    ddvtools: 'ddvtools',
-    background: 'background',
-    backgroundDevtools: 'backgroundDevtools',
-    hook: 'content/hook.js',
-    detector: 'content/detector.js'
+    popups: '@popups',
+    devtools: '@devtools',
+    ddvtools: '@ddvtools',
+    background: '@background',
+    backgroundDevtools: '@backgroundDevtools',
+    hook: '@content/hook.js',
+    detector: '@content/detector.js'
   },
   output: {
     path: path.resolve(__dirname, './build'),

@@ -1,6 +1,6 @@
 {
   "name": "ddv-devtools",
-  "version": "3.1.2",
+  "version": "0.0.1",
   "description": "devtools for Vue.js!",
   "main": "index.js",
   "scripts": {
